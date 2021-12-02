@@ -40,7 +40,10 @@ class MainActivity : AppCompatActivity() {
                     if (calendar == null) {
                         return
                     }
-                    displayInfo.selectDate = "${calendar.year}-${calendar.month}-${calendar.day}"
+
+
+
+                    displayInfo.selectDate = "${calendar.year}-${String.format("%0"+2+"d", calendar.month)}-${String.format("%0"+2+"d", calendar.day)}"
                     ToastUtil.showShortToast(displayInfo.selectDate)
                 }
             })
@@ -60,4 +63,7 @@ class MainActivity : AppCompatActivity() {
 
         }.start()
     }
+
+
+
 }
